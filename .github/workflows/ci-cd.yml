@@ -58,7 +58,7 @@ jobs:
       - name: Set up Java (SonarQube requirement)
         uses: actions/setup-java@v3
         with:
-          java-version: '11'
+          java-version: '17'
       - name: Run SonarQube Analysis
         run: |
           mvn sonar:sonar \
