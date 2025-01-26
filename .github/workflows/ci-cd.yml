@@ -84,7 +84,7 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Build and Push Docker Image
         run: |
-          IMAGE_NAME=your-dockerhub-username/your-image-name
+          IMAGE_NAME=bishwajitmandal/case-study
           docker build -t $IMAGE_NAME:${{ github.sha }} .
           docker tag $IMAGE_NAME:${{ github.sha }} $IMAGE_NAME:latest
           docker push $IMAGE_NAME:${{ github.sha }}
@@ -100,9 +100,9 @@ jobs:
           password: ${{ secrets.DOCKER_PASSWORD }}
       - name: Pull Docker Image
         run: |
-          IMAGE_NAME=your-dockerhub-username/your-image-name
+          IMAGE_NAME=bishwajitmandal/case-study
           docker pull $IMAGE_NAME:latest
       - name: Deploy Application
         run: |
-          IMAGE_NAME=your-dockerhub-username/your-image-name
+          IMAGE_NAME=bishwajitmandal/case-study
           docker run -d --name my-app -p 80:80 $IMAGE_NAME:latest
