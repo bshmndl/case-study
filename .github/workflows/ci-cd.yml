@@ -59,9 +59,10 @@ jobs:
         uses: actions/setup-java@v3
         with:
           java-version: '17'
+          distribution: zulu
       - name: Run SonarQube Analysis
         run: |
-          mvn sonar:sonar \
+          npx sonar:sonar \
             -Dsonar.projectKey=bshmndl_github_actions \
             -Dsonar.organization=bshmndl_github_actions \
             -Dsonar.host.url=https://sonarcloud.io \
