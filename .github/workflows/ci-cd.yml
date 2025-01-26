@@ -65,7 +65,10 @@ jobs:
             -Dsonar.projectKey=bshmndl_github_actions \
             -Dsonar.organization=bshmndl_github_actions \
             -Dsonar.host.url=https://sonarcloud.io \
-            -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+            -Dsonar.login=${{ secrets.SONAR_TOKEN }} \
+            -Dsonar.scm.provider=git \
+            -Dsonar.scm.git.server-username=${{ github.actor }} \
+            -Dsonar.scm.git.server-password=${{ secrets.GITHUB_TOKEN }}
   docker:
     needs: build
     runs-on: ubuntu-latest
